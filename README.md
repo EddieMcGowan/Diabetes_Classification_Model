@@ -9,12 +9,16 @@ This project aims to develop a **classification model** to predict the **type of
 ### **Goal:**
 Identify the best-performing classification model for diabetes condition prediction.
 
-- **Configuration:** Train-Test Split: 80/20
+### **Methodology**
+An **80/20 train-test split** will be used for model evaluation. Initially, all features will be included. If computational constraints arise, **Principal Component Analysis (PCA)** will be applied for dimensionality reduction.
+
+For the **baseline models**, standard configurations are used as found used in homeworks in this class. **Decision Tree:** Maximum depth of **5**. **K-Nearest Neighbors (KNN):** **n = 5**. For models developed in **Milestone 2**, hyperparameter tuning will be conducted using **randomized search** across a predefined range of values. See the models below.
+
 
 ### **Models:**
     - **Baseline Model** Logistic Regression
-    - **Baseline Model**Decision Tree
-    - **Baseline Model**K-Nearest Neighbors (KNN)
+    - **Baseline Model** Decision Tree
+    - **Baseline Model** K-Nearest Neighbors (KNN)
     - Linear Discriminant Analysis (LDA)
     - Support Vector Machine (SVM)
     - Random Forest
@@ -42,7 +46,7 @@ Identify the best-performing classification model for diabetes condition predict
    - Identified no missing values or outliers.
    - Verified class balance in the target variable.
 5. **Created a correlation matrix of all the features:**
-   - Retained some features with correlations **> 0.7** after analuzing the correlated features.
+   - Retained some features with correlations **> 0.7** after analyzing the correlated features.
 
 ## Statistical Analysis
 ### **Hypothesis Testing:**
@@ -64,6 +68,7 @@ Identify the best-performing classification model for diabetes condition predict
 
 ## **Next Steps**
 - Implement **remaining models**:
+  - Linear Discriminant Analysis (LDA)
   - Support Vector Machine (SVM)
   - Random Forest
   - XGBoost
