@@ -26,8 +26,11 @@ from scipy.stats import mode
 
 from scipy.stats import mode
 import gdown
-gdown.download("https://drive.google.com/file/d/1-R0pFmnsJKC6Dz3ZhCRa1ykWEpHfdRqk/view?usp=share_link", "rf_model.pkl", quiet=False)
-gdown.download("https://drive.google.com/file/d/11hkUg6TzMdNkGJZ2Qp3sHfS2YOJbbe8L/view?usp=share_link", "stacking_model.pkl", quiet=False)
+import os
+if not os.path.exists("rf_model.pkl"):
+    gdown.download("https://drive.google.com/uc?id=1-R0pFmnsJKC6Dz3ZhCRa1ykWEpHfdRqk", "rf_model.pkl", quiet=False)
+if not os.path.exists("stacking_model.pkl"):
+    gdown.download("https://drive.google.com/uc?id=11hkUg6TzMdNkGJZ2Qp3sHfS2YOJbbe8L", "stacking_model.pkl", quiet=False)
 
 
 
