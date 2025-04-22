@@ -27,10 +27,40 @@ from scipy.stats import mode
 from scipy.stats import mode
 import gdown
 import os
+import joblib
+from tensorflow.keras.models import load_model
+
+# --- Download models ---
 if not os.path.exists("rf_model.pkl"):
     gdown.download("https://drive.google.com/uc?id=1-R0pFmnsJKC6Dz3ZhCRa1ykWEpHfdRqk", "rf_model.pkl", quiet=False)
+
 if not os.path.exists("stacking_model.pkl"):
     gdown.download("https://drive.google.com/uc?id=11hkUg6TzMdNkGJZ2Qp3sHfS2YOJbbe8L", "stacking_model.pkl", quiet=False)
+
+# --- Load models ---
+rf_model = joblib.load("rf_model.pkl")
+stacking_model = joblib.load("stacking_model.pkl")
+tree_model = joblib.load("tree_model.pkl")
+logistic_model = joblib.load("logistic_model.pkl")
+knn_model = joblib.load("knn_model.pkl")
+lda_model = joblib.load("lda_model.pkl")
+svm_model = joblib.load("svm_model.pkl")
+xgb_model = joblib.load("xgb_model.pkl")
+mlp_model = load_model("mlp_model.h5")  # Keras model
+
+# --- Assemble model dictionary ---
+models = {
+    "Baseline: Decision Tree": tree_model,
+    "Baseline: Logistic Regression": logistic_model,
+    "Baseline: KNN": knn_model,
+    "LDA": lda_model,
+    "SVM": svm_model,
+    "Random Forest": rf_model,
+    "XGBoost": xgb_model,
+    "Custom: Stacking": stacking_model,
+    "Multilayer Perceptron": mlp_model
+}
+
 
 
 
@@ -73,21 +103,6 @@ The dataset I’m using comes from Kaggle and includes over 70,000 patient recor
 )
 # Section 2: Models Tested
 
-# Define base estimators for ensembles
-import joblib
-from tensorflow.keras.models import load_model
-
-models = {
-    "Baseline: Decision Tree": joblib.load("tree_model.pkl"),
-    "Baseline: Logistic Regression": joblib.load("logistic_model.pkl"),
-    "Baseline: KNN": joblib.load("knn_model.pkl"),
-    "LDA": joblib.load("lda_model.pkl"),
-    "SVM": joblib.load("svm_model.pkl"),
-    "Random Forest": joblib.load("rf_model.pkl"),
-    "XGBoost": joblib.load("xgb_model.pkl"),
-    "Custom: Stacking": joblib.load("stacking_model.pkl"),
-    "Multilayer Perceptron": load_model("mlp_model.h5")  # Keras model
-}
 
 voting_model = CustomVotingModel(
     model_dict=models,  # Use the dictionary you already have
