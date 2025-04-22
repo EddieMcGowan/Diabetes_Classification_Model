@@ -31,24 +31,38 @@ import joblib
 from tensorflow.keras.models import load_model
 
 # --- Download models ---
+import os
+import gdown
+import joblib
+from tensorflow.keras.models import load_model
+
+# Download if not already present
 if not os.path.exists("rf_model.pkl"):
-    gdown.download("https://drive.google.com/uc?id=1-R0pFmnsJKC6Dz3ZhCRa1ykWEpHfdRqk", "rf_model.pkl", quiet=False)
+    gdown.download(
+        "https://drive.google.com/uc?id=1-R0pFmnsJKC6Dz3ZhCRa1ykWEpHfdRqk",
+        "rf_model.pkl",
+        quiet=False
+    )
 
 if not os.path.exists("stacking_model.pkl"):
-    gdown.download("https://drive.google.com/uc?id=11hkUg6TzMdNkGJZ2Qp3sHfS2YOJbbe8L", "stacking_model.pkl", quiet=False)
+    gdown.download(
+        "https://drive.google.com/uc?id=11hkUg6TzMdNkGJZ2Qp3sHfS2YOJbbe8L",
+        "stacking_model.pkl",
+        quiet=False
+    )
 
-# --- Load models ---
-rf_model = joblib.load("rf_model.pkl")
-stacking_model = joblib.load("stacking_model.pkl")
+# Only now load all models AFTER downloading
 tree_model = joblib.load("tree_model.pkl")
 logistic_model = joblib.load("logistic_model.pkl")
 knn_model = joblib.load("knn_model.pkl")
 lda_model = joblib.load("lda_model.pkl")
 svm_model = joblib.load("svm_model.pkl")
 xgb_model = joblib.load("xgb_model.pkl")
-mlp_model = load_model("mlp_model.h5")  # Keras model
+rf_model = joblib.load("rf_model.pkl") 
+stacking_model = joblib.load("stacking_model.pkl")
+mlp_model = load_model("mlp_model.h5")
 
-# --- Assemble model dictionary ---
+# Model dictionary (AFTER loading)
 models = {
     "Baseline: Decision Tree": tree_model,
     "Baseline: Logistic Regression": logistic_model,
@@ -60,8 +74,6 @@ models = {
     "Custom: Stacking": stacking_model,
     "Multilayer Perceptron": mlp_model
 }
-
-
 
 
 
