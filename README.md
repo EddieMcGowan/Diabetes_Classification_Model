@@ -6,15 +6,25 @@
 Over 800 million people globally are affected by diabetes, a condition that, if left unmanaged, can lead to serious, life-threatening complications. For this project, I developed ten classification models to predict the type of diabetes or prediabetic condition a patient may have, using both genetic markers and environmental factors. As a professional currently working in healthcare, my goal is for this model to eventually assist doctors in diagnosing a patient’s condition, enabling more effective preventive measures or targeted treatment strategies. I used a 70,000-record dataset from Kaggle for this project.
 
 I will be evaluating the following models:
+
     - **Baseline Model** Decision Tree
+    
     - **Baseline Model** Logistic Regression
+    
     - **Baseline Model** K-Nearest Neighbors (KNN)
+    
     - Linear Discriminant Analysis (LDA)
+    
     - Support Vector Machine (SVM)
+    
     - Random Forest
+    
     - XGBoost
+    
     - Custom Voting Ensemble
+    
     - Custom Stacking
+    
     - Multilayer Perceptron (Neural Network)
 
 These models are evaluated based on predictive performance, execution time, and interpretability for non-technical audiences.
