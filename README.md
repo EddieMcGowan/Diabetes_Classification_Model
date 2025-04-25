@@ -120,7 +120,7 @@ To restart the streamlit application (need to run the above code first). Please 
 1. (If needed) Kill any current process thats running
     - (lsof -i :5006) this will identify if any processes are running on the 5006 port.
     - (kill ####) replace #### with the ID where the process is running
-2. Start app by running on magic02 terminal "aux_1.py"
+2. Ru streamlit application code/app by running on magic02 terminal "streamlit run aux_1.py --server.port 5006"
 3. Open url http://magic02.cse.lehigh.edu:5006
 
 ## Project Plan
