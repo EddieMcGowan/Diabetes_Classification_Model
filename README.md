@@ -108,7 +108,8 @@ The following Python packages are required to run this project:
    `steamlit`
 
 You can install these dependencies using the following command:
-pip install pandas matplotlib seaborn scipy numpy scikit-learn xgboost tensorflow joblib streamlit
+
+pip install streamlit pandas numpy matplotlib seaborn scikit-learn xgboost joblib tensorflow scipy
 
 ## How to Run the Code
 Note, the steamlit application is already running on: http://magic02.cse.lehigh.edu:5006
