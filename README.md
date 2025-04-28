@@ -105,7 +105,7 @@ The following Python packages are required to run this project:
     `to_categorical`, `EarlyStopping`
 - `joblib`  
 - `pickle`
-   `steamlit`
+   `streamlit`
 
 You can install these dependencies using the following command:
 
