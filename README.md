@@ -82,7 +82,7 @@ This dataset has 34 columns and 70,000 rows. The columns are as follows:
 | **Early Onset Symptoms**          | Whether the patient exhibited early onset symptoms of diabetes ("True" or "False"). |
 
 **Important:**  
-- The dataset file name is `diabetes_dataset00.csv`.
+- The dataset file name is `diabetes_dataset00.csv`.Rename as "diabetes_dataset.csv" (remove the 00) before running the main code "DSCI 441 Milestone 2.ipynb" or the auxiliary code "aux_1.py". This is to ensure there is no confusion, as the dataset is only one part.
 - It should be placed inside the `data/` folder, which is one level below `DSCI 441 Milestone 2.ipynb`.
 
 ## List of packages required
