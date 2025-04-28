@@ -112,7 +112,7 @@ You can install these dependencies using the following command:
 pip install streamlit pandas numpy matplotlib seaborn scikit-learn xgboost joblib tensorflow scipy
 
 ## How to Run the Code
-The steamlit application is already running on: http://magic02.cse.lehigh.edu:5006 
+The streamlit application is already running on: http://magic02.cse.lehigh.edu:5006 
 
 To view the streamlit application, you need to first log into the Lehigh VPN.
 
