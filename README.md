@@ -112,13 +112,15 @@ You can install these dependencies using the following command:
 pip install streamlit pandas numpy matplotlib seaborn scikit-learn xgboost joblib tensorflow scipy
 
 ## How to Run the Code
-Note, the steamlit application is already running on: http://magic02.cse.lehigh.edu:5006
+The steamlit application is already running on: http://magic02.cse.lehigh.edu:5006 
+
+To view the streamlit application, you need to first log into the Lehigh VPN.
 
 To run the code:
 1. Install all packages references above
 2. Log into the Lehigh VPN
 3. Enter the magic HPC http://magic02.cse.lehigh.edu
-4. Upload dataset to the Jupyter server. (see instructions on how to download the data above)
+4. Upload the dataset folder "data/" and the main and aux files ("DSCI 441 Milestone 2.ipynb" and "aux_1.py") to the Jupyter server. (see instructions on how to download the data above)
 5. Run DSCI 441 Milestone 2.ipynb. Model results are in the file. The output of this file is the trained models. Overall code will take a few hours to run.
 
 To restart the streamlit application (need to run the above code first). Please email me if you run into any challenges.
